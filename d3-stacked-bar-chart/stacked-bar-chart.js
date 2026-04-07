@@ -35,8 +35,8 @@ function renderChart(grouping) {
 		// convert strings to numbers in relevant columns
 		data.forEach(function (d) {
 			d.Study_Hours_Per_Day = +d.Study_Hours_Per_Day;
-			d.Sleep_Hours = +d.Sleep_Hours;
-			d.Social_Hours_Week = +d.Social_Hours_Week;
+			d.Sleep_Hours_Per_Day = +d.Sleep_Hours_Per_Day;
+			d.Social_Hours_Per_Day = +d.Social_Hours_Per_Day;
 		});
 
 		// group average hours by major or major type
@@ -45,8 +45,8 @@ function renderChart(grouping) {
 				data,
 				(v) => ({
 					avgStudy: d3.mean(v, (d) => d.Study_Hours_Per_Day),
-					avgSleep: d3.mean(v, (d) => d.Sleep_Hours),
-					avgSocial: d3.mean(v, (d) => d.Social_Hours_Week),
+					avgSleep: d3.mean(v, (d) => d.Sleep_Hours_Per_Day),
+					avgSocial: d3.mean(v, (d) => d.Social_Hours_Per_Day),
 				}),
 				grouping === "major" ? (d) => d.Major : (d) => d.Major_Type,
 			)
