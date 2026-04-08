@@ -1,7 +1,7 @@
 // Data for the heatmap
 const dataMajor = {
   cols: ["Business", "Computer Science", "Economics", "Engineering", "Mathematics", "Psychology"],
-  rows: ["Study hours/day", "Sleep hours/night", "Social hours/week", "Attendance rate"],
+  rows: ["Study hours/day", "Sleep hours/night", "Social hours/day", "Attendance rate"],
   values: [
     [ 0.25,  0.27,  0.22,  0.27,  0.20,  0.19],
     [-0.04,  0.02,  0.01, -0.02, -0.00,  0.06],
@@ -12,7 +12,7 @@ const dataMajor = {
 
 const dataAge = {
   cols: ["18", "19", "20", "21", "22", "23", "24"],
-  rows: ["Study hours/day", "Sleep hours/night", "Social hours/week", "Attendance rate"],
+  rows: ["Study hours/day", "Sleep hours/night", "Social hours/day", "Attendance rate"],
   values: [
     [ 0.20,  0.29,  0.20,  0.27,  0.25,  0.20,  0.21],
     [-0.03,  0.05,  0.01,  0.03, -0.02,  0.03, -0.06],

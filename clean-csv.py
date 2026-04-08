@@ -1,4 +1,5 @@
 import pandas as pd
+from scipy.stats import pearsonr
 
 students = pd.read_csv("Student_data.csv")
 
@@ -22,11 +23,16 @@ students["Major_Type"] = students.apply(lambda row: categorize_major(row["Major"
 # new column 2: GPA_Change (Final_CGPA − Previous_GPA)
 students["GPA_Change"] = students.apply(lambda row: round(row["Final_CGPA"] - row["Previous_GPA"], 2), axis=1)
 
+# change social hours to get daily average: Social_Hours_Per_Day (Social_Hours_Week / 7)
+students["Social_Hours_Week"] = students["Social_Hours_Week"].apply(lambda hours: round(hours / 7, 2))
+
+# rename sleep and social hours columns for consistency
+students.rename(columns={"Social_Hours_Week": "Social_Hours_Per_Day"}, inplace=True)
+students.rename(columns={"Sleep_Hours": "Sleep_Hours_Per_Day"}, inplace=True)
+
 students.to_csv("student_data_cleaned.csv", index=False)
 
 # calculate pearson correlation between habits (grouped by age and major) and the final CGPA for heatmap
-
-from scipy.stats import pearsonr
 
 habits = ["Study_Hours_Per_Day", "Sleep_Hours", "Social_Hours_Week", "Attendance_Pct"]
 
@@ -42,4 +48,3 @@ for age in sorted(students["Age"].unique()):
     sub = students[students["Age"] == age]
     corr = [round(pearsonr(sub[h], sub["Final_CGPA"])[0], 2) for h in habits]
     print(f"Age {age}: {corr}")
-    
