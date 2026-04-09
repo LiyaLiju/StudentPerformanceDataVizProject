@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Habits & CGPA — Correlation Heatmap</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #222;
+      background: #fff;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    p.subtitle {
+      font-size: 14px;
+      color: #666;
+      margin: 0 0 20px;
+    }
+
+    .toggle-group {
+      display: flex;
+      margin-bottom: 24px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      width: fit-content;
+    }
+
+    .toggle-group button {
+      padding: 7px 18px;
+      font-size: 13px;
+      background: #fff;
+      color: #555;
+      border: none;
+      cursor: pointer;
+    }
+
+    .toggle-group button:not(:last-child) {
+      border-right: 1px solid #ccc;
+    }
+
+    .toggle-group button.active {
+      background: #222;
+      color: #fff;
+    }
+
+    #tooltip {
+      position: absolute;
+      display: none;
+      pointer-events: none;
+    }
+
+    #legend {
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Habits vs. Final CGPA</h2>
+  <p class="subtitle">Pearson correlation between daily habits and final CGPA, grouped by major or age</p>
+
+  <div class="toggle-group">
+    <button id="btn-major" class="active" onclick="handleToggle('major')">By Major</button>
+    <button id="btn-age" onclick="handleToggle('age')">By Age Group</button>
+  </div>
+
+  <div id="heatmap-container"></div>
+  <div id="legend"></div>
+  <div id="tooltip"></div>
+
+  <script src="heatmap.js"></script>
+
+  <script>
+    function handleToggle(group) {
+      document.getElementById("btn-major").classList.toggle("active", group === "major");
+      document.getElementById("btn-age").classList.toggle("active", group === "age");
+      switchGroup(group);
+    }
+  </script>
+
+  <p>
+    This heatmap reveals that attendance rate and study hours have a strong positive correlation with Final CGPA across all majors and age groups, with attendance showing the strongest correlation ranging from +0.26 to +0.34.
+    Sleep hours and social hours show very weak correlation, close to 0, meaning that these habits have little to no relationship with academic performance. 
+    This pattern is consistent across all majors and age groups. The key takeaway is consistent attendance and higher study time are the most important habits for achieving a high CGPA, while sleep and social hours do not significantly impact academic performance in this dataset.
+</p>
+
+</body>
+</html>
