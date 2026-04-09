@@ -34,7 +34,7 @@ students.to_csv("student_data_cleaned.csv", index=False)
 
 # calculate pearson correlation between habits (grouped by age and major) and the final CGPA for heatmap
 
-habits = ["Study_Hours_Per_Day", "Sleep_Hours", "Social_Hours_Week", "Attendance_Pct"]
+habits = ["Study_Hours_Per_Day", "Sleep_Hours_Per_Day", "Social_Hours_Per_Day", "Attendance_Pct"]
 
 # by major
 
