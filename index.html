@@ -226,7 +226,7 @@
 					being studied.
 				</p>
 			</div>
-            <div class="image">
+			<div class="image">
 				<iframe
 					src="bar_avg_attendance_by_major_type.html"
 					width="100%"
@@ -236,163 +236,213 @@
 			</div>
 		</div>
 
-        <!-- 4th Viz: Attendance vs Study Hours scatterplot (Tableau) -->
+		<!-- 4th Viz: Attendance vs Study Hours scatterplot (Tableau) -->
 		<h3>Attendance and Study Hours</h3>
 
-        <div class="container">
-            <div class="image">
-                <div class='tableauPlaceholder' id='viz1775842841315' style='position: relative'>
-                    <noscript>
-                        <a href='#'>
-                            <img alt=' '
-                                src='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1_rss.png'
-                                style='border: none' />
-                        </a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='site_root' value='' />
-                        <param name='name' value='StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange' />
-                        <param name='tabs' value='yes' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                    </object>
-                </div>
-                <script type='text/javascript'>
-                    var divElement = document.getElementById('viz1775842841315');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    vizElement.style.width = '100%';
-                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
-            </div>
-            <div class="text">
-                <p>For this visualization, we wanted to see how each individual student 
-                    was doing when regarding their attendance and study hours, and see if their GPA change 
-                    had trends regarding both of these statistics. We decided to use color as a mark for GPA 
-                    change, as it is easily discernible when taking a quick look at the graph to find a pattern, 
-                    and put the Attendance and Study Hours on the X and Y axis because we thought that these two 
-                    metrics would be significant when looking at GPA change, both positive and negative. Color 
-                    also has the advantage of being able to be a two color palette, where we can use a color like 
-                    Red to mark a negative shift, gray to be a neutral change, and Blue to be a positive change, 
-                    as we did in this graph, and it has made it very easy to see trends because of this change we made. 
-                    By putting attendance on the X axis, and study hours on the Y axis, it also makes it easier for us 
-                    to spot outliers that could be contributing to a smaller GPA change, or even a negative change, 
-                    even though they are spending a lot of time studying for a class.
-                </p>
-                <p>From this visualization, we can see that there is a general trend that the more study hours you 
-                    put in, the higher your GPA change becomes, but this is only if you are also keeping a high attendance. 
-                    As we can see from the outlier on the middle top part of the graph, even though they are putting 
-                    in a very large amount of study hours, they are not able to improve their GPA significantly because 
-                    they aren't actually showing up to class enough. We can also see the general trend of Red shifting 
-                    into gray shifting into Blue as we go to further and further higher attendance percentage numbers, 
-                    showing us that yes, Attendance percentage does have a lot to do with GPA change, both positively and 
-                    negatively.
-                </p>
-            </div>
-        </div>
-
-		<!-- 5th viz: Sleep vs GPA Change scatter + linked bar (Altair) -->
-		<h3>Sleep Hours and GPA Change</h3>
-		
-        <div class="container">
+		<div class="container">
+			<div class="image">
+				<div
+					class="tableauPlaceholder"
+					id="viz1775842841315"
+					style="position: relative"
+				>
+					<noscript>
+						<a href="#">
+							<img
+								alt=" "
+								src="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1_rss.png"
+								style="border: none"
+							/>
+						</a>
+					</noscript>
+					<object class="tableauViz" style="display: none">
+						<param
+							name="host_url"
+							value="https%3A%2F%2Fpublic.tableau.com%2F"
+						/>
+						<param name="embed_code_version" value="3" />
+						<param name="site_root" value="" />
+						<param
+							name="name"
+							value="StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange"
+						/>
+						<param name="tabs" value="yes" />
+						<param name="toolbar" value="yes" />
+						<param
+							name="static_image"
+							value="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1.png"
+						/>
+						<param name="animate_transition" value="yes" />
+						<param name="display_static_image" value="yes" />
+						<param name="display_spinner" value="yes" />
+						<param name="display_overlay" value="yes" />
+						<param name="display_count" value="yes" />
+						<param name="language" value="en-US" />
+					</object>
+				</div>
+				<script type="text/javascript">
+					var divElement = document.getElementById("viz1775842841315");
+					var vizElement = divElement.getElementsByTagName("object")[0];
+					vizElement.style.width = "100%";
+					vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+					var scriptElement = document.createElement("script");
+					scriptElement.src =
+						"https://public.tableau.com/javascripts/api/viz_v1.js";
+					vizElement.parentNode.insertBefore(scriptElement, vizElement);
+				</script>
+			</div>
 			<div class="text">
 				<p>
-                    This interactive chart explores the relationship between sleep hours and
-                    GPA change from a student's previous to final CGPA, with points colored by
-                    whether the student belongs to a technical or non-technical major. The
-                    slider allows filtering by age and the radio button allows toggling
-                    between major types, while the brush selection links to a bar chart below
-                    showing the count of students in the selected region. Overall, the scatter
-                    plot shows no strong directional trend between sleep hours and GPA change
-                    — students across all sleep ranges show both positive and negative GPA
-                    changes, suggesting that sleep alone is not a reliable predictor of
-                    academic improvement. Both technical and non-technical majors are broadly
-                    distributed across the plot with significant overlap, indicating that
-                    major type does not create a clear divide in how sleep relates to
-                    performance.
-                </p>
-			</div>
-            <div class="image">
-				<iframe
-                    src="scatter_bar_linked_sleep_gpa.html"
-                    width="100%"
-                    height="1000px"
-                    frameborder="0"
-                ></iframe>
+					For this visualization, we wanted to see how each individual student
+					was doing when regarding their attendance and study hours, and see if
+					their GPA change had trends regarding both of these statistics. We
+					decided to use color as a mark for GPA change, as it is easily
+					discernible when taking a quick look at the graph to find a pattern,
+					and put the Attendance and Study Hours on the X and Y axis because we
+					thought that these two metrics would be significant when looking at
+					GPA change, both positive and negative. Color also has the advantage
+					of being able to be a two color palette, where we can use a color like
+					Red to mark a negative shift, gray to be a neutral change, and Blue to
+					be a positive change, as we did in this graph, and it has made it very
+					easy to see trends because of this change we made. By putting
+					attendance on the X axis, and study hours on the Y axis, it also makes
+					it easier for us to spot outliers that could be contributing to a
+					smaller GPA change, or even a negative change, even though they are
+					spending a lot of time studying for a class.
+				</p>
+				<p>
+					From this visualization, we can see that there is a general trend that
+					the more study hours you put in, the higher your GPA change becomes,
+					but this is only if you are also keeping a high attendance. As we can
+					see from the outlier on the middle top part of the graph, even though
+					they are putting in a very large amount of study hours, they are not
+					able to improve their GPA significantly because they aren't actually
+					showing up to class enough. We can also see the general trend of Red
+					shifting into gray shifting into Blue as we go to further and further
+					higher attendance percentage numbers, showing us that yes, Attendance
+					percentage does have a lot to do with GPA change, both positively and
+					negatively.
+				</p>
 			</div>
 		</div>
 
-        <!-- 6th viz: Gender vs Number of Students in Major bar chart (Tableau) -->
+		<!-- 5th viz: Sleep vs GPA Change scatter + linked bar (Altair) -->
+		<h3>Sleep Hours and GPA Change</h3>
+
+		<div class="container">
+			<div class="text">
+				<p>
+					This interactive chart explores the relationship between sleep hours
+					and GPA change from a student's previous to final CGPA, with points
+					colored by whether the student belongs to a technical or non-technical
+					major. The slider allows filtering by age and the radio button allows
+					toggling between major types, while the brush selection links to a bar
+					chart below showing the count of students in the selected region.
+					Overall, the scatter plot shows no strong directional trend between
+					sleep hours and GPA change — students across all sleep ranges show
+					both positive and negative GPA changes, suggesting that sleep alone is
+					not a reliable predictor of academic improvement. Both technical and
+					non-technical majors are broadly distributed across the plot with
+					significant overlap, indicating that major type does not create a
+					clear divide in how sleep relates to performance.
+				</p>
+			</div>
+			<div class="image">
+				<iframe
+					src="scatter_bar_linked_sleep_gpa.html"
+					width="100%"
+					height="1000px"
+					frameborder="0"
+				></iframe>
+			</div>
+		</div>
+
+		<!-- 6th viz: Gender vs Number of Students in Major bar chart (Tableau) -->
 		<h3>Gender and Number of Students in Major</h3>
 
-        <div class="container">
-            <div class="image">
-                <div class='tableauPlaceholder' id='viz1775842869766' style='position: relative'>
-                    <noscript>
-                        <a href='#'>
-                            <img alt=' '
-                                src='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1_rss.png'
-                                style='border: none' />
-                        </a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='site_root' value='' />
-                        <param name='name' value='StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance' />
-                        <param name='tabs' value='yes' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                    </object>
-                </div>
-                <script type='text/javascript'>
-                    var divElement = document.getElementById('viz1775842869766');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    vizElement.style.width = '100%';
-                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                    var scriptElement = document.createElement('script');
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
-            </div>
-            <div class="text">
-                <p>For this visualization, we wanted to make sure that we could categorize not only 
-                    just by gender or major, but break down each of them into their own subcategories, and then 
-                    rank them by attendance percentage. To do this, we created an X axis where Bars in our bar chart 
-                    are broken down by Gender, and then Technical vs Non Technical Majors, and then finally the actual 
-                    major division itself. By doing this, we compare each Major within the realm of the student body 
-                    that it relates to, and so we are able to make accurate comparisons that would be relevant to each 
-                    major regarding attendance. The reason we have chosen to go with a Bar Chart instead of a different 
-                    multi-axis chart, which could have been another way to visualize this information is due to the Bar 
-                    chart having color be a mark, alongside the Y axis being the attendance percentage, so we can easily 
-                    compare student count alongside attendance percentage, as both are variables that can affect the other. 
-                </p>
-                <p>From this visualization, we can see how each major compares by gender, as well as by technical and 
-                    non-technical in terms of attendance. We can also see, through the color mark, that our male students 
-                    have a much higher student count than female, although attendance across genders and major type is very 
-                    similar, as all of them are sitting around 80-88% attendance rate. The most interesting part of the graph 
-                    is when we look at specific majors, as we can see that in Computer Science the difference between genders 
-                    is somewhat significant, as male students show up almost 2% of the time more than female students.
-                </p>
-            </div>
-        </div>
-		
+		<div class="container">
+			<div class="image">
+				<div
+					class="tableauPlaceholder"
+					id="viz1775842869766"
+					style="position: relative"
+				>
+					<noscript>
+						<a href="#">
+							<img
+								alt=" "
+								src="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1_rss.png"
+								style="border: none"
+							/>
+						</a>
+					</noscript>
+					<object class="tableauViz" style="display: none">
+						<param
+							name="host_url"
+							value="https%3A%2F%2Fpublic.tableau.com%2F"
+						/>
+						<param name="embed_code_version" value="3" />
+						<param name="site_root" value="" />
+						<param
+							name="name"
+							value="StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance"
+						/>
+						<param name="tabs" value="yes" />
+						<param name="toolbar" value="yes" />
+						<param
+							name="static_image"
+							value="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1.png"
+						/>
+						<param name="animate_transition" value="yes" />
+						<param name="display_static_image" value="yes" />
+						<param name="display_spinner" value="yes" />
+						<param name="display_overlay" value="yes" />
+						<param name="display_count" value="yes" />
+						<param name="language" value="en-US" />
+					</object>
+				</div>
+				<script type="text/javascript">
+					var divElement = document.getElementById("viz1775842869766");
+					var vizElement = divElement.getElementsByTagName("object")[0];
+					vizElement.style.width = "100%";
+					vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+					var scriptElement = document.createElement("script");
+					scriptElement.src =
+						"https://public.tableau.com/javascripts/api/viz_v1.js";
+					vizElement.parentNode.insertBefore(scriptElement, vizElement);
+				</script>
+			</div>
+			<div class="text">
+				<p>
+					For this visualization, we wanted to make sure that we could
+					categorize not only just by gender or major, but break down each of
+					them into their own subcategories, and then rank them by attendance
+					percentage. To do this, we created an X axis where Bars in our bar
+					chart are broken down by Gender, and then Technical vs Non Technical
+					Majors, and then finally the actual major division itself. By doing
+					this, we compare each Major within the realm of the student body that
+					it relates to, and so we are able to make accurate comparisons that
+					would be relevant to each major regarding attendance. The reason we
+					have chosen to go with a Bar Chart instead of a different multi-axis
+					chart, which could have been another way to visualize this information
+					is due to the Bar chart having color be a mark, alongside the Y axis
+					being the attendance percentage, so we can easily compare student
+					count alongside attendance percentage, as both are variables that can
+					affect the other.
+				</p>
+				<p>
+					From this visualization, we can see how each major compares by gender,
+					as well as by technical and non-technical in terms of attendance. We
+					can also see, through the color mark, that our male students have a
+					much higher student count than female, although attendance across
+					genders and major type is very similar, as all of them are sitting
+					around 80-88% attendance rate. The most interesting part of the graph
+					is when we look at specific majors, as we can see that in Computer
+					Science the difference between genders is somewhat significant, as
+					male students show up almost 2% of the time more than female students.
+				</p>
+			</div>
+		</div>
 
 		<!-- 5th viz: correlation heatmap -->
 		<h3>Correlation Between Habits and Performance</h3>
@@ -406,7 +456,7 @@
 			></iframe>
 		</div>
 
-        <!-- takeaway paragraph for sankey diagram
+		<!-- takeaway paragraph for sankey diagram
         <p> Sankey: For this visualization, we wanted to make sure that we could see the changes of GPA grouped by 
             the categories that we are interested in. We chose Gender and Major as our two categories where we wanted 
             to take a look at exactly how each of these specific groups have their GPA being changed. Since we are using 
@@ -428,7 +478,25 @@
     Write 2 paragraphs:
     - 2-3 main conclusions from the visualizations
     - What could be done in the future (e.g. time series, more demographics) -->
-		<h3>Summary</h3>
-		
+		<div>
+			<h3>Summary</h3>
+			<p>
+				From the data, we can see that there was not a significant difference in
+				how lifestyle or major differences affected student performance. Across
+				all majors, students studied, slept, and socialized roughly the same
+				amount, which led to similar results in how their GPA changed from
+				semester to semester. We found that regardless of major, more sleep led
+				to better academic performance, and male students have a larger
+				prevalence and attendance rate than female students. One notable
+				observation was the gap in attendance rates between male and female
+				computer science majors, with female students having a rate 2% lower
+				than male students. With these findings, we can investigate the causes
+				behind female students' lower attendance rates and provide more
+				equitable support to women in the computer science field. We can also
+				take away that personal health should be promoted among college students
+				so that they can sleep more, leading to better academic performance and
+				personal success.
+			</p>
+		</div>
 	</body>
 </html>
