@@ -63,19 +63,19 @@
 			margin-top: 16px;
 		}
 
-		#chart-wrapper {
-			display: flex;
+		#component-wrapper {
 			align-items: flex-start;
 			gap: 24px;
+			width: fit-content;
 		}
 
 		#chart-description {
-			max-width: 550px;
+			max-width: 90%;
 			padding: 20px;
 			font-size: 1.05em;
 			flex-shrink: 0;
 			border-radius: 10px;
-			background: #e7f2f6;
+			background: #e0f1f6;
 		}
 
 		#chart-description p {
@@ -90,8 +90,8 @@
 			A stacked bar chart of average hours students spent studying, sleeping,
 			and socializing per day, grouped by major
 		</p>
-		<div id="chart-wrapper">
-			<div>
+		<div id="component-wrapper">
+			<div id="chart-wrapper">
 				<div id="stacked-bar-chart"></div>
 				<div id="legend"></div>
 				<div id="tooltip"></div>
