@@ -1,4 +1,4 @@
-const students = d3.csv("../student_data_cleaned.csv");
+const students = d3.csv("student_data_cleaned.csv");
 
 const tooltip = d3
 	.select("#tooltip")
