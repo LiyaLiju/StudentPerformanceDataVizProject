@@ -167,6 +167,10 @@ a:hover {
     background-color: #f4f7fb;
 }
 
+.tg tr.added-feature td {
+    background-color: #eee5f5;
+}
+
 /* ── Tag badges ── */
 .tag {
     display: inline-block;
