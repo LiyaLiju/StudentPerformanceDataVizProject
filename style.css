@@ -1,78 +1,221 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-	width: auto;
-	margin: 0 auto;
-	padding: 0 20px 20px 20px;
-	border: 3px solid black;
+    font-family: 'Times New Roman', Times, serif, sans-serif; 
+    background-color: #fbf3ff;
+    color: #2c2c2c;
 }
 
-h1 {
-	margin: 0;
-	padding: 20px 0;
-	color: black;
-	text-align: center;
+/* ── Header ── */
+.site-header {
+    background: linear-gradient(135deg, #4d0f60 0%, #2f163e 100%);
+    color: white;
+    padding: 50px 40px 30px;
+    text-align: center;
 }
 
-.tg {
-	border-collapse: collapse;
-	border-spacing: 0;
+.site-header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
 }
 
-.tg td {
-	border-color: black;
-	border-style: solid;
-	border-width: 1px;
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	overflow: hidden;
-	padding: 10px 5px;
-	word-break: normal;
+.site-header .subtitle {
+    font-size: 0.95rem;
+    color: #caa8e0;
+    margin-bottom: 6px;
 }
 
-.tg th {
-	border-color: black;
-	border-style: solid;
-	border-width: 1px;
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	font-weight: normal;
-	overflow: hidden;
-	padding: 10px 5px;
-	word-break: normal;
+.site-header .course {
+    font-size: 0.85rem;
+    color: #9b6ab8;
 }
 
-.tg .tg-0lax {
-	text-align: left;
-	vertical-align: top;
+/* ── Nav ── */
+nav {
+    background-color: #2f163e;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #420f60;
 }
 
-.center {
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
+nav a {
+    color: #c9a8e0;
+    text-decoration: none;
+    padding: 12px 14px;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 3px solid transparent;
 }
 
-.container {
-	align-items: center;
-	display: flex; /* Align items vertically in center */
+nav a:hover {
+    color: white;
+    border-bottom: 3px solid #D7274A;
 }
 
-.image {
-	flex: 0 0 65%; /* Don't allow the image to grow or shrink */
-	margin-right: 20px; /* Add some space between image and text */
+/* ── Main ── */
+main {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 50px 30px;
 }
 
-.text {
-	flex: 1; /* Allow text to grow to fill remaining space */
+/* ── Section cards ── */
+section {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 40px;
+    margin-bottom: 40px;
+}
+
+/* ── Section headings ── */
+h2 {
+    font-size: 1.5rem;
+    color: #3d0f60;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8eef5;
 }
 
 h3 {
-	font-size: 24px;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 p {
-	font-size: 18px;
+    font-size: 0.97rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+a {
+    color: #460f60;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #D7274A;
+}
+
+.image {
+    flex: 0 0 60%;
+}
+
+.text {
+    flex: 1;
+}
+
+.viz {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+
+.viz iframe {
+    width: 800px;
+    max-width: 100%;
+}
+
+/* ── Full-width center ── */
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+/* ── Table ── */
+.tg {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 24px 0;
+    font-size: 0.88rem;
+}
+
+.tg th {
+    background-color: #3d0f60;
+    color: white;
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.tg td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+.tg tr:nth-child(even) td {
+    background-color: #f4f7fb;
+}
+
+/* ── Tag badges ── */
+.tag {
+    display: inline-block;
+    background-color: #e8eef5;
+    color: #370f60;
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.8rem;
+    margin-right: 6px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.tag.altair  { background-color: #e0f0ff; color: #0066cc; }
+.tag.tableau { background-color: #fff0e0; color: #cc6600; }
+.tag.d3      { background-color: #ffe0e0; color: #cc0000; }
+
+/* ── Interaction Instr. ── */
+.interactive-hint {
+    display: inline-block;
+    align-items: center;
+    gap: 6px;
+    background-color: #f5ecfd;
+    color: #3b0f60;
+    border: 1px solid #dbc5f5;
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.8rem;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 12px;
+}
+
+.interactive-hint::before {
+    content: "◎";
+    font-size: 0.85rem;
+    color: #3b0f60;
+}
+
+/* ── Divider ── */
+.divider {
+    border: none;
+    border-top: 1px solid #eee8f5;
+    margin: 24px 0;
 }
 
 iframe {
-	width: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
 }
