@@ -52,6 +52,19 @@ function renderChart(grouping) {
 			)
 			.map(([major, avgs]) => ({ major, ...avgs }));
 
+		const sortedOrder = [
+			"Business",
+			"Computer Science",
+			"Economics",
+			"Engineering",
+			"Mathematics",
+			"Psychology",
+		];
+
+		avgByMajor.sort(
+			(a, b) => sortedOrder.indexOf(a.major) - sortedOrder.indexOf(b.major),
+		);
+
 		// x and y scales + axes
 		const xScale = d3
 			.scaleBand()

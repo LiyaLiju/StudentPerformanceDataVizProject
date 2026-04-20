@@ -1,325 +1,458 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Performance & Habits Analysis</title>
-    <link href="style.css" rel="stylesheet" />
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Student Performance & Habits Analysis</title>
+		<link href="style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="site-header">
+			<h1>Student Performance & Habits Analysis</h1>
+			<p class="subtitle">
+				Sarah Jane Gregory · Ananya Krishnamurthy · Liya Liju · Simar Sidhu
+			</p>
+			<p class="course">
+				DS4200 — Information Presentation and Data Visualization
+			</p>
+		</header>
 
-<header class="site-header">
-    <h1>Student Performance & Habits Analysis</h1>
-    <p class="subtitle">Sarah Jane Gregory · Ananya Krishnamurthy · Liya Liju · Simar Sidhu</p>
-    <p class="course">DS4200 — Information Presentation and Data Visualization</p>
-</header>
+		<nav>
+			<a href="#introduction">Introduction</a>
+			<a href="#data">Data</a>
+			<a href="#sleep-gpa">Sleep & GPA</a>
+			<a href="#habits-overview">Habits Overview</a>
+			<a href="#heatmap">Correlation</a>
+			<a href="#study-hours">Study Hours</a>
+			<a href="#study-gpa">Study & GPA</a>
+			<a href="#attendance-study">Attendance & Study</a>
+			<a href="#gender">Gender & Major</a>
+			<a href="#summary">Summary</a>
+		</nav>
 
-<nav>
-    <a href="#introduction">Introduction</a>
-    <a href="#data">Data</a>
-    <a href="#habits-overview">Habits Overview</a>
-    <a href="#study-hours">Study Hours</a>
-    <a href="#study-gpa">Study & GPA</a>
-    <a href="#attendance-study">Attendance & Study</a>
-    <a href="#sleep-gpa">Sleep & GPA</a>
-    <a href="#gender">Gender & Major</a>
-    <a href="#heatmap">Correlation</a>
-    <a href="#summary">Summary</a>
-</nav>
+		<main>
+			<!-- Introduction -->
+			<section id="introduction">
+				<h2>Overall Introduction</h2>
+				<p>
+					Our project analyzes how college students' daily habits may be
+					influencing their academic performance and whether daily habits, like
+					hours sleeping or attendance rate, differ based on major, the type of
+					major, gender, or age. With this analysis, we want to discover trends
+					that lead to student success and uncover any disparities between
+					demographics so that those groups of students can receive targeted
+					support. We also want to investigate whether the assumption that
+					technical majors are more difficult than other majors is supported by
+					real data.
+				</p>
+				<p>
+					To study the effects of different factors on college students'
+					performance, we visualised comparisons between different categories of
+					students and their habits. We mainly focused on comparing students by
+					their major and gender and showing the individual statistics, such as
+					hours spent studying, sleeping, and socializing, for those students.
+					Another trend we focused on was visualizing the relationship between
+					daily habits and academic performance, so we compared attendance rate
+					and study hours with GPA change as well as sleep hours with GPA
+					change.
+				</p>
+			</section>
 
-<main>
+			<!-- Data -->
+			<section id="data">
+				<h2>Introduction to the Data</h2>
+				<p>
+					The dataset we analyzed contains information about individual college
+					students, their demographics, and statistics about their daily habits
+					and academic performance. The data contains 5000 rows and was
+					collected from college students across different universities. You can
+					access the original dataset
+					<a
+						href="https://www.kaggle.com/datasets/robiulhasanjisan/university-student-performance-and-habits-dataset"
+						>here</a
+					>. We normalized weekly social hours to daily hours and added two new
+					features: Major Type (Technical vs Non-Technical) and GPA Change
+					(Final − Previous GPA).
+				</p>
 
-    <!-- Introduction -->
-    <section id="introduction">
-        <h2>Overall Introduction</h2>
-        <p>
-            Our project analyzes how college students' daily habits may be influencing
-            their academic performance and whether daily habits, like hours sleeping
-            or attendance rate, differ based on major, the type of major, gender, or
-            age. With this analysis, we want to discover trends that lead to student
-            success and uncover any disparities between demographics so that those
-            groups of students can receive targeted support. We also want to
-            investigate whether the assumption that technical majors are more
-            difficult than other majors is supported by real data.
-        </p>
-        <p>
-            To study the effects of different factors on college students'
-            performance, we visualised comparisons between different categories of
-            students and their habits. We mainly focused on comparing students by
-            their major and gender and showing the individual statistics, such as
-            hours spent studying, sleeping, and socializing, for those students.
-            Another trend we focused on was visualizing the relationship between
-            daily habits and academic performance, so we compared attendance rate
-            and study hours with GPA change as well as sleep hours with GPA change.
-        </p>
-    </section>
+				<table class="tg">
+					<thead>
+						<tr>
+							<th>Variable Name</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Student_ID</td>
+							<td>Unique identifier for each student</td>
+						</tr>
+						<tr>
+							<td>Gender</td>
+							<td>Gender of the student (Male/Female)</td>
+						</tr>
+						<tr>
+							<td>Age</td>
+							<td>Age of the student (18–24)</td>
+						</tr>
+						<tr>
+							<td>Major</td>
+							<td>Student's field of study</td>
+						</tr>
+						<tr>
+							<td>Attendance_Pct</td>
+							<td>Percentage of classes attended</td>
+						</tr>
+						<tr>
+							<td>Study_Hours_Per_Day</td>
+							<td>Average hours spent studying per day</td>
+						</tr>
+						<tr>
+							<td>Previous_GPA</td>
+							<td>GPA prior to the current term</td>
+						</tr>
+						<tr>
+							<td>Sleep_Hours_Per_Day</td>
+							<td>Average hours of sleep per night</td>
+						</tr>
+						<tr>
+							<td>Social_Hours_Per_Day</td>
+							<td>Average hours spent socializing per day</td>
+						</tr>
+						<tr>
+							<td>Final_CGPA</td>
+							<td>Cumulative GPA at end of term</td>
+						</tr>
+						<tr class="added-feature">
+							<td>Major_Type</td>
+							<td>Technical or Non-Technical (added feature)</td>
+						</tr>
+						<tr class="added-feature">
+							<td>GPA_Change</td>
+							<td>Final CGPA − Previous GPA (added feature)</td>
+						</tr>
+					</tbody>
+				</table>
 
-    <!-- Data -->
-    <section id="data">
-        <h2>Introduction to the Data</h2>
-        <p>
-            The dataset we analyzed contains information about individual college
-            students, their demographics, and statistics about their daily habits and
-            academic performance. The data contains 5000 rows and was collected from
-            college students across different universities. You can access the original
-            dataset <a href="https://www.kaggle.com/datasets/robiulhasanjisan/university-student-performance-and-habits-dataset">here</a>.
-            We normalized weekly social hours to daily hours and added two new features:
-            Major Type (Technical vs Non-Technical) and GPA Change (Final − Previous GPA).
-        </p>
+				<p>
+					References:
+					<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7381801/"
+						>The Effect of Sleep Quality on Students' Academic Achievement</a
+					>
+					·
+					<a
+						href="https://www.sciencedirect.com/science/article/pii/S0361476X04000384"
+						>Why Study Time Does Not Predict GPA Across College Students</a
+					>
+				</p>
+			</section>
 
-        <table class="tg">
-            <thead>
-                <tr><th>Variable Name</th><th>Details</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Student_ID</td><td>Unique identifier for each student</td></tr>
-                <tr><td>Gender</td><td>Gender of the student (Male/Female)</td></tr>
-                <tr><td>Age</td><td>Age of the student (18–24)</td></tr>
-                <tr><td>Major</td><td>Student's field of study</td></tr>
-                <tr><td>Attendance_Pct</td><td>Percentage of classes attended</td></tr>
-                <tr><td>Study_Hours_Per_Day</td><td>Average hours spent studying per day</td></tr>
-                <tr><td>Previous_GPA</td><td>GPA prior to the current term</td></tr>
-                <tr><td>Sleep_Hours_Per_Day</td><td>Average hours of sleep per night</td></tr>
-                <tr><td>Social_Hours_Per_Day</td><td>Average hours spent socializing per day</td></tr>
-                <tr><td>Final_CGPA</td><td>Cumulative GPA at end of term</td></tr>
-                <tr class="added-feature"><td>Major_Type</td><td>Technical or Non-Technical (added feature)</td></tr>
-				<tr class="added-feature"><td>GPA_Change</td><td>Final CGPA − Previous GPA (added feature)</td></tr>
-            </tbody>
-        </table>
+			<!-- Sleep vs GPA -->
+			<section id="sleep-gpa">
+				<h2>Sleep Hours and GPA Change</h2>
+				<span class="tag altair">Altair</span>
+				<span class="interactive-hint"
+					>Interactive — drag to select a region · use radio buttons to filter
+					by major type · adjust the age slider</span
+				>
+				<div class="viz">
+					<iframe
+						src="scatter_bar_linked_sleep_gpa.html"
+						height="800px"
+						width="600px"
+					></iframe>
+				</div>
+				<p>
+					Overall, the scatter plot shows no strong directional trend between
+					sleep hours and GPA change — students across all sleep ranges show
+					both positive and negative GPA changes, suggesting that sleep alone is
+					not a reliable predictor of academic improvement. Both technical and
+					non-technical majors are broadly distributed across the plot with
+					significant overlap, indicating that major type does not create a
+					clear divide in how sleep relates to performance.
+				</p>
+			</section>
 
-        <p>
-            References:
-            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7381801/">The Effect of Sleep Quality on Students' Academic Achievement</a>
-            ·
-            <a href="https://www.sciencedirect.com/science/article/pii/S0361476X04000384">Why Study Time Does Not Predict GPA Across College Students</a>
-        </p>
-    </section>
+			<!-- Habits Overview -->
+			<section id="habits-overview">
+				<h2>Overview of Student Habits by Major</h2>
+				<span class="tag d3">D3</span>
+				<span class="interactive-hint"
+					>Interactive — hover over bars to see habit breakdowns · switch
+					between grouping by major and major type</span
+				>
+				<div class="center">
+					<iframe src="stacked-bar-chart.html" height="750px"></iframe>
+				</div>
+				<p>
+					This chart contrasts the number of hours students spent studying,
+					sleeping, and socializing each day to analyze if a student's major has
+					an effect on their daily habits. From the visualization, the number of
+					hours spent in each category is relatively equal for each major.
+					Business majors have the most hours spent socializing while
+					engineering majors have the least social hours. Business majors also
+					get the most sleep per night at 7.07 hours on average. Engineering and
+					psychology students have the least hours of sleep. Economics majors
+					dedicate the most time to studying while mathematics majors spend the
+					least time, though the difference is fractional. Grouping the data by
+					major type reveals a similar trend with even statistics across majors.
+					After comparing the three technical majors, engineering, computer
+					science, and mathematics, with the three non-technical majors,
+					psychology, economics, and business, the visualization shows that
+					non-technical majors spend slightly more time in each category. This
+					data suggests that college students dedicate the same amount of effort
+					to their studies regardless of their major, and that the perceived
+					difficulty of technical majors over non-technical majors is not
+					reflected in the number of hours spent studying.
+				</p>
+			</section>
 
-    <!-- Habits Overview -->
-    <section id="habits-overview">
-        <h2>Overview of Student Habits by Major</h2>
-        <span class="tag d3">D3</span>
-        <span class="interactive-hint">Interactive — hover over bars to see habit breakdowns · switch between grouping by major and major type</span>
-        <div class="center">
-            <iframe src="stacked-bar-chart.html" height="1060px"></iframe>
-        </div>
-    </section>
+			<!-- Heatmap -->
+			<section id="heatmap">
+				<h2>Correlation Between Habits and Performance</h2>
+				<span class="tag d3">D3</span>
+				<span class="interactive-hint"
+					>Interactive — switch between grouping by major and age</span
+				>
+				<div class="center">
+					<iframe src="heatmap.html" height="780px"></iframe>
+				</div>
+				<p>
+					This heatmap reveals that attendance rate and study hours have a
+					strong positive correlation with Final CGPA across all majors and age
+					groups, with attendance showing the strongest correlation ranging from
+					+0.26 to +0.34. Sleep hours and social hours show very weak
+					correlation, close to 0, meaning that these habits have little to no
+					relationship with academic performance. This pattern is consistent
+					across all majors and age groups. The key takeaway is consistent
+					attendance and higher study time are the most important habits for
+					achieving a high CGPA, while sleep and social hours do not
+					significantly impact academic performance in this dataset.
+				</p>
+			</section>
 
-    <!-- Study Hours Boxplot -->
-    <section id="study-hours">
-        <h2>Study Hours Per Day by Major</h2>
-        <span class="tag altair">Altair</span>
-        <div class="viz">
-            <iframe src="boxplot_study_hours_per_day_by_major.html" height="500px"></iframe>
-        </div>
-        <p>
-            This chart displays the distribution of daily study hours across six
-            majors to explore whether a student's field of study influences how
-            much time they dedicate to studying. The interquartile ranges are very
-            similar across all majors, with the middle 50% of students in every
-            major studying between around 2.5 and 6 hours per day. The median
-            study hours are nearly identical as well, suggesting that no single
-            major stands out as significantly more or less demanding in terms of
-            time spent studying. However, all majors show a notable number of
-            outliers on the higher end, with some students studying up to 14 hours
-            per day regardless of their major. Overall, the visualization indicates
-            that daily study hours are mainly consistent across majors, and that
-            individual student habits may play a larger role in determining study
-            time than the major itself.
-        </p>
-    </section>
+			<!-- Study Hours Boxplot -->
+			<section id="study-hours">
+				<h2>Study Hours Per Day by Major</h2>
+				<span class="tag altair">Altair</span>
+				<div class="viz">
+					<iframe
+						src="boxplot_study_hours_per_day_by_major.html"
+						height="500px"
+					></iframe>
+				</div>
+				<p>
+					This chart displays the distribution of daily study hours across six
+					majors to explore whether a student's field of study influences how
+					much time they dedicate to studying. The interquartile ranges are very
+					similar across all majors, with the middle 50% of students in every
+					major studying between around 2.5 and 6 hours per day. The median
+					study hours are nearly identical as well, suggesting that no single
+					major stands out as significantly more or less demanding in terms of
+					time spent studying. However, all majors show a notable number of
+					outliers on the higher end, with some students studying up to 14 hours
+					per day regardless of their major. Overall, the visualization
+					indicates that daily study hours are mainly consistent across majors,
+					and that individual student habits may play a larger role in
+					determining study time than the major itself.
+				</p>
+			</section>
 
-    <!-- Study Hours vs GPA Change -->
-    <section id="study-gpa">
-        <h2>Study Hours Per Day vs GPA Change</h2>
-        <span class="tag altair">Altair</span>
-        <div class="viz">
-            <iframe src="scatter_study_hours_gpa_change.html" height="500px"></iframe>
-        </div>
-        <p>
-            The trend line shows a clear positive relationship: students who study more 
-			hours per day tend to see greater GPA improvement. Students studying less 
-			than 2 hours a day are roughly centered around zero or slightly below, suggesting 
-			minimal improvement or even a slight decline, while students studying 8 or more 
-			hours are almost entirely above the zero line. Despite the wide spread of points 
-			at every study level, the upward trend is consistent, indicating that study hours 
-			is a meaningful predictor of academic improvement regardless of major.
-        </p>
-    </section>
+			<!-- Study Hours vs GPA Change -->
+			<section id="study-gpa">
+				<h2>Study Hours Per Day vs GPA Change</h2>
+				<span class="tag altair">Altair</span>
+				<div class="viz">
+					<iframe
+						src="scatter_study_hours_gpa_change.html"
+						height="500px"
+					></iframe>
+				</div>
+				<p>
+					The trend line shows a clear positive relationship: students who study
+					more hours per day tend to see greater GPA improvement. Students
+					studying less than 2 hours a day are roughly centered around zero or
+					slightly below, suggesting minimal improvement or even a slight
+					decline, while students studying 8 or more hours are almost entirely
+					above the zero line. Despite the wide spread of points at every study
+					level, the upward trend is consistent, indicating that study hours is
+					a meaningful predictor of academic improvement regardless of major.
+				</p>
+			</section>
 
-    <!-- Attendance vs Study Hours Tableau -->
-    <section id="attendance-study">
-        <h2>Attendance and Study Hours vs GPA Change</h2>
-        <span class="tag tableau">Tableau</span>
-        <span class="interactive-hint">Interactive — hover over points to see details</span>
-        <div class="center">
-            <div class='tableauPlaceholder' id='viz1775842841315' style='position: relative; width: 85%;'>
-                <noscript>
-                    <a href='#'>
-                        <img alt=' '
-                            src='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1_rss.png'
-                            style='border: none' />
-                    </a>
-                </noscript>
-                <object class='tableauViz' style='display:none;'>
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                    <param name='embed_code_version' value='3' />
-                    <param name='site_root' value='' />
-                    <param name='name' value='StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange' />
-                    <param name='tabs' value='yes' />
-                    <param name='toolbar' value='yes' />
-                    <param name='static_image' value='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1.png' />
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
-                    <param name='language' value='en-US' />
-                </object>
-            </div>
-            <script type='text/javascript'>
-                var divElement = document.getElementById('viz1775842841315');
-                var vizElement = divElement.getElementsByTagName('object')[0];
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                var scriptElement = document.createElement('script');
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-            </script>
-        </div>
-        <p>
-            
-			For this visualization, we wanted to see how each individual student
-            was doing regarding their attendance and study hours, and whether their
-            GPA change showed trends based on both of these statistics. Color encodes
-            GPA change — red for negative, gray for neutral, and blue for positive —
-            making it easy to spot patterns at a glance.
-        </p>
-        <p>
-            The visualization reveals that higher study hours only translate to GPA
-            improvement when paired with high attendance. Students with low attendance
-            see negative GPA shifts regardless of how many hours they study. At 80–100%
-            attendance, almost all students trend toward a positive GPA change, with
-            study hours determining how large that improvement is.
-        </p>
-    </section>
+			<!-- Attendance vs Study Hours Tableau -->
+			<section id="attendance-study">
+				<h2>Attendance and Study Hours vs GPA Change</h2>
+				<span class="tag tableau">Tableau</span>
+				<span class="interactive-hint"
+					>Interactive — hover over points to see details</span
+				>
+				<div class="center">
+					<div
+						class="tableauPlaceholder"
+						id="viz1775842841315"
+						style="position: relative; width: 85%"
+					>
+						<noscript>
+							<a href="#">
+								<img
+									alt=" "
+									src="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1_rss.png"
+									style="border: none"
+								/>
+							</a>
+						</noscript>
+						<object class="tableauViz" style="display: none">
+							<param
+								name="host_url"
+								value="https%3A%2F%2Fpublic.tableau.com%2F"
+							/>
+							<param name="embed_code_version" value="3" />
+							<param name="site_root" value="" />
+							<param
+								name="name"
+								value="StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange"
+							/>
+							<param name="tabs" value="yes" />
+							<param name="toolbar" value="yes" />
+							<param
+								name="static_image"
+								value="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/AttendancevsStudyHoursPerDaycomparingGPAChange/1.png"
+							/>
+							<param name="animate_transition" value="yes" />
+							<param name="display_static_image" value="yes" />
+							<param name="display_spinner" value="yes" />
+							<param name="display_overlay" value="yes" />
+							<param name="display_count" value="yes" />
+							<param name="language" value="en-US" />
+						</object>
+					</div>
+					<script type="text/javascript">
+						var divElement = document.getElementById("viz1775842841315");
+						var vizElement = divElement.getElementsByTagName("object")[0];
+						vizElement.style.width = "100%";
+						vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+						var scriptElement = document.createElement("script");
+						scriptElement.src =
+							"https://public.tableau.com/javascripts/api/viz_v1.js";
+						vizElement.parentNode.insertBefore(scriptElement, vizElement);
+					</script>
+				</div>
+				<p>
+					For this visualization, we wanted to see how each individual student
+					was doing regarding their attendance and study hours, and whether
+					their GPA change showed trends based on both of these statistics.
+					Color encodes GPA change — red for negative, gray for neutral, and
+					blue for positive — making it easy to spot patterns at a glance.
+				</p>
+				<p>
+					The visualization reveals that higher study hours only translate to
+					GPA improvement when paired with high attendance. Students with low
+					attendance see negative GPA shifts regardless of how many hours they
+					study. At 80–100% attendance, almost all students trend toward a
+					positive GPA change, with study hours determining how large that
+					improvement is.
+				</p>
+			</section>
 
-    <!-- Sleep vs GPA -->
-    <section id="sleep-gpa">
-        <h2>Sleep Hours and GPA Change</h2>
-        <span class="tag altair">Altair</span>
-        <span class="interactive-hint">Interactive — drag to select a region · use radio buttons to filter by major type · adjust the age slider</span>
-        <div class="viz">
-            <iframe src="scatter_bar_linked_sleep_gpa.html" height="800px" width="600px"></iframe>
-        </div>
-        <p>
-            Overall, the scatter plot shows no strong directional trend between sleep hours 
-			and GPA change — students across all sleep ranges show both positive and negative GPA
-            changes, suggesting that sleep alone is not a reliable predictor of
-            academic improvement. Both technical and non-technical majors are broadly
-            distributed across the plot with significant overlap, indicating that
-            major type does not create a clear divide in how sleep relates to
-            performance.
-        </p>
-    </section>
+			<!-- Gender & Major Tableau -->
+			<section id="gender">
+				<h2>Gender and Number of Students in Major</h2>
+				<span class="tag tableau">Tableau</span>
+				<span class="interactive-hint"
+					>Interactive — hover over bars to see details</span
+				>
+				<div class="center">
+					<div
+						class="tableauPlaceholder"
+						id="viz1775842869766"
+						style="position: relative; width: 85%"
+					>
+						<noscript>
+							<a href="#">
+								<img
+									alt=" "
+									src="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1_rss.png"
+									style="border: none"
+								/>
+							</a>
+						</noscript>
+						<object class="tableauViz" style="display: none">
+							<param
+								name="host_url"
+								value="https%3A%2F%2Fpublic.tableau.com%2F"
+							/>
+							<param name="embed_code_version" value="3" />
+							<param name="site_root" value="" />
+							<param
+								name="name"
+								value="StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance"
+							/>
+							<param name="tabs" value="yes" />
+							<param name="toolbar" value="yes" />
+							<param
+								name="static_image"
+								value="https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1.png"
+							/>
+							<param name="animate_transition" value="yes" />
+							<param name="display_static_image" value="yes" />
+							<param name="display_spinner" value="yes" />
+							<param name="display_overlay" value="yes" />
+							<param name="display_count" value="yes" />
+							<param name="language" value="en-US" />
+						</object>
+					</div>
+					<script type="text/javascript">
+						var divElement = document.getElementById("viz1775842869766");
+						var vizElement = divElement.getElementsByTagName("object")[0];
+						vizElement.style.width = "100%";
+						vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+						var scriptElement = document.createElement("script");
+						scriptElement.src =
+							"https://public.tableau.com/javascripts/api/viz_v1.js";
+						vizElement.parentNode.insertBefore(scriptElement, vizElement);
+					</script>
+				</div>
+				<p>
+					This chart breaks down student count and attendance rate by gender,
+					major type, and individual major. Male students outnumber female
+					students across all majors, though attendance rates are similar for
+					both groups, hovering around 80–88%.
+				</p>
+				<p>
+					The most notable finding is in Computer Science, where male students
+					attend about 2% more than female students. While small in absolute
+					terms, within a range of only 8%, this gap is meaningful and worth
+					investigating further — particularly in understanding why female CS
+					students may face barriers to attendance.
+				</p>
+			</section>
 
-    <!-- Gender & Major Tableau -->
-    <section id="gender">
-        <h2>Gender and Number of Students in Major</h2>
-        <span class="tag tableau">Tableau</span>
-        <span class="interactive-hint">Interactive — hover over bars to see details</span>
-        <div class="center">
-            <div class='tableauPlaceholder' id='viz1775842869766' style='position: relative; width: 85%;'>
-                <noscript>
-                    <a href='#'>
-                        <img alt=' '
-                            src='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1_rss.png'
-                            style='border: none' />
-                    </a>
-                </noscript>
-                <object class='tableauViz' style='display:none;'>
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                    <param name='embed_code_version' value='3' />
-                    <param name='site_root' value='' />
-                    <param name='name' value='StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance' />
-                    <param name='tabs' value='yes' />
-                    <param name='toolbar' value='yes' />
-                    <param name='static_image' value='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendervsNumberofStudentsinMajorcomparingAttendance/1.png' />
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
-                    <param name='language' value='en-US' />
-                </object>
-            </div>
-            <script type='text/javascript'>
-                var divElement = document.getElementById('viz1775842869766');
-                var vizElement = divElement.getElementsByTagName('object')[0];
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-                var scriptElement = document.createElement('script');
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-            </script>
-        </div>
-        <p>
-            
-			This chart breaks down student count and attendance rate by gender,
-            major type, and individual major. Male students outnumber female students
-            across all majors, though attendance rates are similar for both groups,
-            hovering around 80–88%.
-        </p>
-        <p>
-            The most notable finding is in Computer Science, where male students
-            attend about 2% more than female students. While small in absolute terms,
-            within a range of only 8%, this gap is meaningful and worth investigating
-            further — particularly in understanding why female CS students may face
-            barriers to attendance.
-        </p>
-    </section>
-
-    <!-- Heatmap -->
-    <section id="heatmap">
-        <h2>Correlation Between Habits and Performance</h2>
-        <span class="tag d3">D3</span>
-        <span class="interactive-hint">Interactive — switch between grouping by major and age</span>
-        <div class="center">
-            <iframe src="heatmap.html" height="780px"></iframe>
-        </div>
-        <p>
-            This heatmap reveals that attendance rate and study hours have a strong positive correlation with Final CGPA across all majors and age groups, with attendance showing the strongest correlation ranging from +0.26 to +0.34.
-    Sleep hours and social hours show very weak correlation, close to 0, meaning that these habits have little to no relationship with academic performance. 
-    This pattern is consistent across all majors and age groups. The key takeaway is consistent attendance and higher study time are the most important habits for achieving a high CGPA, while sleep and social hours do not significantly impact academic performance in this dataset.
-        </p>
-    </section>
-
-    <!-- Summary -->
-    <section id="summary">
-        <h2>Summary</h2>
-        <p>
-            From the data, we can see that there was not a significant difference in
-            how lifestyle or major differences affected student performance. Across
-            all majors, students studied, slept, and socialized roughly the same
-            amount, which led to similar results in how their GPA changed from
-            semester to semester. There was also no correlation between technical
-            majors and their daily habits differing from non-technical majors, which
-            reveals no evidence to support technical majors being more challenging
-            than non-technical ones. We found that regardless of major, higher
-            attendance consistently led to better academic performance.
-        </p>
-        <p>
-            One notable observation was the gap in attendance rates between male and
-            female Computer Science students, with female students attending about 2%
-            less. With these findings, future work could investigate the causes behind
-            this disparity and provide more equitable support to women in computing.
-            Adding longitudinal data or tracking students across multiple semesters
-            would also allow for a richer analysis of how habits evolve and compound
-            over time.
-        </p>
-    </section>
-
-</main>
-
-</body>
+			<!-- Summary -->
+			<section id="summary">
+				<h2>Summary</h2>
+				<p>
+					From the data, we can see that there was not a significant difference
+					in how lifestyle or major differences affected student performance.
+					Across all majors, students studied, slept, and socialized roughly the
+					same amount, which led to similar results in how their GPA changed
+					from semester to semester. There was also no correlation between
+					technical majors and their daily habits differing from non-technical
+					majors, which reveals no evidence to support technical majors being
+					more challenging than non-technical ones. We found that regardless of
+					major, higher attendance consistently led to better academic
+					performance.
+				</p>
+				<p>
+					One notable observation was the gap in attendance rates between male
+					and female Computer Science students, with female students attending
+					about 2% less. With these findings, future work could investigate the
+					causes behind this disparity and provide more equitable support to
+					women in computing. Adding longitudinal data or tracking students
+					across multiple semesters would also allow for a richer analysis of
+					how habits evolve and compound over time.
+				</p>
+			</section>
+		</main>
+	</body>
 </html>

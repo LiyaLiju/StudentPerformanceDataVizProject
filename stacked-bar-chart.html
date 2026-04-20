@@ -68,20 +68,6 @@
 			gap: 24px;
 			width: fit-content;
 		}
-
-		#chart-description {
-			max-width: 90%;
-			padding: 20px;
-			font-size: 1.05em;
-			flex-shrink: 0;
-			border-radius: 10px;
-			background: #e0f1f6;
-		}
-
-		#chart-description p {
-			text-align: justify;
-			margin: 0;
-		}
 	</style>
 
 	<body>
@@ -90,56 +76,29 @@
 			A stacked bar chart of average hours students spent studying, sleeping,
 			and socializing per day, grouped by major
 		</p>
-		<div id="component-wrapper">
-			<div id="chart-wrapper">
-				<div id="stacked-bar-chart"></div>
-				<div id="legend"></div>
-				<div id="tooltip"></div>
-				<div class="toggle-group">
-					<button id="major" class="active" onclick="handleToggle('major')">
-						By Major
-					</button>
-					<button id="major-type" onclick="handleToggle('major-type')">
-						By Major Type
-					</button>
-				</div>
-				<script src="https://d3js.org/d3.v7.min.js"></script>
-				<script src="stacked-bar-chart.js"></script>
-				<script>
-					function handleToggle(group) {
-						document
-							.getElementById("major")
-							.classList.toggle("active", group === "major");
-						document
-							.getElementById("major-type")
-							.classList.toggle("active", group === "major-type");
-						renderChart(group);
-					}
-				</script>
-			</div>
-			<div id="chart-description">
-				<p>
-					This chart contrasts the number of hours students spent studying,
-					sleeping, and socializing each day to analyze if a student's major has
-					an effect on their daily habits. From the visualization, the number of
-					hours spent in each category is relatively equal for each major.
-					Business majors have the most hours spent socializing while
-					engineering majors have the least social hours. Business majors also
-					get the most sleep per night at 7.07 hours on average. Engineering and
-					psychology students have the least hours of sleep. Economics majors
-					dedicate the most time to studying while mathematics majors spend the
-					least time, though the difference is fractional. Grouping the data by
-					major type reveals a similar trend with even statistics across majors.
-					After comparing the three technical majors, engineering, computer
-					science, and mathematics, with the three non-technical majors,
-					psychology, economics, and business, the visualization shows that
-					non-technical majors spend slightly more time in each category. This
-					data suggests that college students dedicate the same amount of effort
-					to their studies regardless of their major, and that the perceived
-					difficulty of technical majors over non-technical majors is not
-					reflected in the number of hours spent studying.
-				</p>
-			</div>
+		<div id="stacked-bar-chart"></div>
+		<div id="legend"></div>
+		<div id="tooltip"></div>
+		<div class="toggle-group">
+			<button id="major" class="active" onclick="handleToggle('major')">
+				By Major
+			</button>
+			<button id="major-type" onclick="handleToggle('major-type')">
+				By Major Type
+			</button>
 		</div>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script src="stacked-bar-chart.js"></script>
+		<script>
+			function handleToggle(group) {
+				document
+					.getElementById("major")
+					.classList.toggle("active", group === "major");
+				document
+					.getElementById("major-type")
+					.classList.toggle("active", group === "major-type");
+				renderChart(group);
+			}
+		</script>
 	</body>
 </html>
