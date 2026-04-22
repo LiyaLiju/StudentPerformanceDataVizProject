@@ -34,9 +34,9 @@ function render(groupKey) {
 
     // layout 
     const margin = { top: 10, right: 20, bottom: 70, left: 160 };
-    const cellH = 56;
+    const cellH = 60;
     const minCellW = 90;
-    const totalW = Math.max(data.cols.length * minCellW + margin.left + margin.right, 500);
+    const totalW = 800    
     const cellW = (totalW - margin.left - margin.right) / data.cols.length;
     const totalH = data.rows.length * cellH + margin.top + margin.bottom;
 
