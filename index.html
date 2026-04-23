@@ -224,7 +224,7 @@
 					>Interactive — switch between grouping by major and age</span
 				>
 				<div class="center">
-					<iframe src="heatmap.html" height="640px"></iframe>
+					<iframe src="heatmap.html" height="620px"></iframe>
 				</div>
 				<p>
 					This heatmap reveals that attendance rate and study hours have a
@@ -368,7 +368,7 @@
 
 			<!-- Gender & Major Tableau -->
 			<section id="gender">
-				<h2>Gender and Number of Students in Major</h2>
+				<h2>Attendance Rate by Gender and Major</h2>
 				<span class="tag tableau">Tableau</span>
 				<span class="interactive-hint"
 					>Interactive — hover over bars to see details</span
@@ -436,6 +436,58 @@
 					terms, within a range of only 8%, this gap is meaningful and worth
 					investigating further — particularly in understanding why female CS
 					students may face barriers to attendance.
+				</p>
+			</section>
+
+			<!-- Gender, Major, GPA Tableau -->
+			<section id="gender">
+				<h2>Gender and Major Distribution by GPA Change</h2>
+				<span class="tag tableau">Tableau</span>
+				<span class="interactive-hint"
+					>Interactive — hover to see GPA Change details
+				</span>
+				<div class="center">
+					<div class='tableauPlaceholder' id='viz1776906777230' style='position: relative; width: 85%'>
+						<noscript>
+							<a href='#'>
+								<img alt=' '
+									src='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendertoMajorSankeycomparingGPA/1_rss.png'
+									style='border: none' />
+							</a>
+						</noscript>
+
+						<object class='tableauViz' style='display:none;'>
+							<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+							<param name='embed_code_version' value='3' />
+							<param name='site_root' value='' />
+							<param name='name' value='StudentPerformanceDash-DS4200/GendertoMajorSankeycomparingGPA' />
+							<param name='tabs' value='yes' />
+							<param name='toolbar' value='yes' />
+							<param name='static_image' value='https://public.tableau.com/static/images/St/StudentPerformanceDash-DS4200/GendertoMajorSankeycomparingGPA/1.png' />
+							<param name='animate_transition' value='yes' />
+							<param name='display_static_image' value='yes' />
+							<param name='display_spinner' value='yes' />
+							<param name='display_overlay' value='yes' />
+							<param name='display_count' value='yes' />
+							<param name='language' value='en-US' />
+						</object>
+
+					</div>
+
+					<script type='text/javascript'>
+						var divElement = document.getElementById('viz1776906777230');
+						var vizElement = divElement.getElementsByTagName('object')[0];
+
+						vizElement.style.width = '100%';
+						vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+
+						var scriptElement = document.createElement('script');
+						scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+						vizElement.parentNode.insertBefore(scriptElement, vizElement);
+					</script>
+				</div>
+				<p>
+					<!-- takeaway paragraph -->
 				</p>
 			</section>
 
